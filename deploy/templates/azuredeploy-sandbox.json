@@ -33,7 +33,7 @@
         },
         "aadAuthority": {
             "type": "string",
-            "defaultValue": "https://login.microsoftonline.com/common",
+            "defaultValue": "https://login.microsoftonline.us/common",
             "metadata": {
                 "description": "OAuth Authority for FHIR server"
             }
@@ -85,7 +85,7 @@
         },
         "fhirDashboardTemplateUrl": {
             "type": "string",
-            "defaultValue": "https://raw.githubusercontent.com/Microsoft/fhir-server-samples/master/deploy/templates/azuredeploy-dashboard.json",
+            "defaultValue": "https://raw.githubusercontent.com/aaronba/fhir-server-samples/master/deploy/templates/azuredeploy-dashboard.json",
             "metadata": {
                 "description": "URL for FHIR dashboard template"
             }
@@ -99,7 +99,7 @@
         },
         "fhirDashboardRepositoryUrl": {
             "type": "string",
-            "defaultValue": "https://github.com/Microsoft/fhir-server-samples",
+            "defaultValue": "https://github.com/aaronba/fhir-server-samples",
             "metadata": {
                 "description": "URL for FHIR dashboard repository"
             }
@@ -123,7 +123,7 @@
         "appServicePlanName": "[concat(variables('environmentName'),'-asp')]",
         "environmentName": "[if(empty(parameters('environmentName')), concat('fhirdemo', uniqueString(resourceGroup().id)), parameters('environmentName'))]",
         "fhirServiceName": "[concat(variables('environmentName'),'srvr')]",
-        "fhirServiceUrl": "[concat('https://', variables('fhirServiceName'),'.azurewebsites.net')]",
+        "fhirServiceUrl": "[concat('https://', variables('fhirServiceName'),'.azurewebsites.us')]",
         "aadFhirServerAudience": "[if(empty(parameters('aadFhirServerAudience')), variables('fhirServiceUrl'), parameters('aadFhirServerAudience'))]",
         "fhirDashboardName": "[concat(variables('environmentName'),'dash')]",
         "growthChartName": "[concat(variables('environmentName'),'growth')]",
